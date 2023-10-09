@@ -1,0 +1,33 @@
+/* body{
+   font-family: 'Open-Sans'; FALTA PONER LA TIPOGRAFIA
+} */
+
+/*-------------------ESTILO DEL NAV (SERÁ PARECIDO AL RESTO DE VISTAS)------------*/
+div.nav{
+    background-color: #1274CA;
+    height: 135px;
+    display: flex;
+    padding: 25px;
+}
+
+img#logo{
+    width: 265px;
+    height: 133px;
+}
+
+div.titulo{
+    margin-left: 400px; 
+    /* text-align: center; */
+    font-weight: bold;
+    font-size: 42px;
+    color: white;
+}
+
+
+/*-------------------ESTILO DEL MAIN ------------*/
+
+div.horario{
+    margin-top: 50px;
+    border: 2px solid #DD890D;
+    height: 400px;  
+}
