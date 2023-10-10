@@ -1,0 +1,95 @@
+/*LE PONEOS FUENTE A LAS VISTAS*/
+*{
+    font-family: 'Open Sans';
+}
+
+/*-------------------ESTILO DEL NAV (SERÁ PARECIDO AL RESTO DE VISTAS)------------*/
+div.nav{
+    background-color: #1274CA;
+    height: 115px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    padding: 25px;
+}
+
+img#logo{
+    width: 255px;
+    height: 123px;
+}
+
+div.titulo{
+    margin-left: 250px; 
+    margin-top: 25px;
+    /* text-align: center; */
+    font-weight: bold;
+    font-size: 42px;
+    color: white;
+}
+
+/*-------------------ESTILO DEL NAV SECUNDATRIO (SERÁ PARECIDO AL RESTO DE VISTAS)------------*/
+div.nav2{
+    background-color: #408CCE; 
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    color: white;
+    height: 85px;
+    margin-top: 7px;
+}
+
+div.nav2 div{
+    margin: 10px;
+    text-align: center;
+    line-height: 60px;
+    font-size: 30px;
+}
+
+div.liespecial{
+    font-weight: bold;
+    color: #014179;
+    text-decoration: underline; 
+}
+
+
+/*-------------------ESTILO DEL MAIN ------------*/ç
+
+div.thead{
+    width: 700px;
+    height: 75px;
+    margin: 0 auto;
+    background-color: #dd890D;
+    margin-top: 25px;
+    color: #408CCE;
+
+}
+
+table.tabla_usuarios{
+    width: 700px;
+    height: 400px;
+    margin-top: 26px;
+    border: 2px solid black;
+    border-collapse: collapse;
+    color: #006DA4;
+    margin: 0 auto;
+    font-weight: bold;
+    /* text-align: center; */
+}
+
+table.tabla_usuarios tr,td{
+    border: 1px solid;
+    text-align: center;
+} 
+
+
+button{
+    margin-top: 50px;
+    background-color: white;
+    border: 0px solid white;
+    margin-left: 1100px;
+}
+
+img.imgbtn{
+    width: 45px;
+    height: 45px;
+}

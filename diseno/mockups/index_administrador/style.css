@@ -6,7 +6,7 @@
 /*-------------------ESTILO DEL NAV (SERÁ PARECIDO AL RESTO DE VISTAS)------------*/
 div.nav{
     background-color: #1274CA;
-    height: 135px;
+    height: 115px;
     display: flex;
     flex-wrap: wrap;
     justify-content: flex-start;
@@ -14,8 +14,8 @@ div.nav{
 }
 
 img#logo{
-    width: 265px;
-    height: 133px;
+    width: 255px;
+    height: 123px;
 }
 
 div.titulo{
@@ -28,10 +28,29 @@ div.titulo{
 }
 
 
+/*-------------------ESTILO DEL NAV SECUNDATRIO (SERÁ PARECIDO AL RESTO DE VISTAS)------------*/
+div.nav2{
+    background-color: #408CCE; 
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    color: white;
+    height: 85px;
+    margin-top: 7px;
+}
+
+div.nav2 div{
+    margin: 10px;
+    text-align: center;
+    line-height: 75px;
+    font-size: 30px;
+}
+
+
 /*-------------------ESTILO DEL MAIN ------------*/
 
 div.horario{
-    margin-top: 50px;
+    margin-top: 20px;
     border: 2px solid #DD890D;
     height: 400px;  
 }
