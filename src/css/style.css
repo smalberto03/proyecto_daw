@@ -80,9 +80,33 @@ input#submit{
 }
 
 
+#div_login{
 
+    width: 340px;
+    height: 80px;
+    background-color: #A9ADE8;
+    border-radius: 7px;
+    border: 4px solid white;
+    position: absolute;
+    margin-left: 450px;
+    padding-left: 20px;
+    padding-top: 10px;
+}
 
+div#div_login a{
+    text-decoration: none;
+    font-weight: bold;
+    color: white;
+    font-size: x-large;
+}
 
+div#div_login img{
+
+    width: 40px;
+    height: 40px;
+    position: relative;
+    top: 16px;
+}
 
 
 /* ---------------- ESTILO DE INDEX DE LOS USUARIOS  ------------ */
@@ -120,7 +144,11 @@ div.horario{
 }
 
 
-
+img.user_image{
+    border-radius: 100px;
+    margin-left: 20px;
+    margin-top: 15.5px;
+}
 
 
 
@@ -348,24 +376,28 @@ img.imgbtn{
 }
 
 
+.importar_users{
+    position: relative;
+    left: 40px;
+}
 
+div.div_excel{
 
+    width: 470px;
+    height: 150px;
+    border-radius: 5px;
+    border: 2px solid #86C473;
+    background-color: #B6F5A4;
+    padding: 10px;
+    margin-left: 400px;
+}
 
+div.div_excel h2{
+    color: #4CA32D;
+}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+h1#users{
+    text-align: center;
+    color: #014179;
+    text-decoration: underline; 
+}

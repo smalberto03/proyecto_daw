@@ -69,5 +69,13 @@
 
             echo $importacion;             
         }
+
+        public function accion_comprobar_admins($id)
+        {
+            $object_model = new M_usuarios();
+            $respuesta = $object_model->comprobar_admin($id);
+
+            return $respuesta;
+        }
     }
 ?>

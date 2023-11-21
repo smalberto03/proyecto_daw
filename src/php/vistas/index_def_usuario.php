@@ -66,7 +66,7 @@ Uri 'http://localhost/proyecto_daw/src/php/vistas/index_usuario.php'-->
     } else {
 
       // user is not exists   
-      $sql = "INSERT INTO users (email, first_name, last_name, gender, full_name, picture, verifiedEmail, token) VALUES ('{$userinfo['email']}', '{$userinfo['first_name']}', '{$userinfo['last_name']}', '{$userinfo['gender']}', '{$userinfo['full_name']}', '{$userinfo['picture']}', '{$userinfo['verifiedEmail']}', '{$userinfo['token']}')";
+      $sql = "INSERT INTO users (email, first_name, last_name, gender, full_name, picture, verifiedEmail, token, es_admin) VALUES ('{$userinfo['email']}', '{$userinfo['first_name']}', '{$userinfo['last_name']}', '{$userinfo['gender']}', '{$userinfo['full_name']}', '{$userinfo['picture']}', '{$userinfo['verifiedEmail']}', '{$userinfo['token']}', 0)";
       //$result = mysqli_query($conn, $sql);
       $conexion2 = new Conexion();
       $conectar2 = $conexion2->conectar();
@@ -120,16 +120,31 @@ Uri 'http://localhost/proyecto_daw/src/php/vistas/index_usuario.php'-->
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Welcome</title>
+  <link rel="stylesheet" href="../../css/style.css">
 </head>
 
 <body>
-  <img src="<?= $userinfo['picture'] ?>" alt="" width="90px" height="90px">
-  <ul>
+    <div class="nav">
+      <div>
+          <img src="../../../diseno/assets/logotipo.png" alt="Logo de la escula" id="logo">
+      </div>
+      <div class="titulo">ESCUELA VIRGEN DE GUADALUPE</div>
+      <div><img src="<?= $userinfo['picture'] ?>" alt="" width="55px" height="55px" class="user_image"></div>
+    </div>
+    <!--<div>    
+       // echo '<img src="'.$_SESSION["user_image"].'" class="img-responsive img-circle img-thumbnail" />'; -->
+      <!-- // echo '<h3><b>Name :</b> '.$_SESSION['user_first_name'].' '.$_SESSION['user_last_name'];     
+    </div>-->
+  
+    <!-- <ul>
     <li>Full Name: <?= $userinfo['full_name'] ?></li>
     <li>Email Address: <?= $userinfo['email'] ?></li>
-    <li>Gender: <?= $userinfo['gender'] ?></li>
+    <li>Gender: <?= $userinfo['gender'] ?></li>-->
     <li><a href="cerrar_sesion.php">Logout</a></li>
-  </ul>
+    <!-- </ul>  -->
+    <!-- <div class="horario">
+      HORARIO PROFESOR
+    </div> -->
 </body>
 
 </html>

@@ -13,7 +13,7 @@
 <body>
     <div class="nav">
         <div>                                                       
-            <img src="../../assets/logotipo.png" alt="Logo de la escula" id="logo">
+            <img src="../../../diseno/assets/logotipo.png" alt="Logo de la escula" id="logo">
         </div>
         <div class="titulo">ESCUELA VIRGEN DE GUADALUPE</div>
     </div>
@@ -31,9 +31,9 @@
             Horas especiales
         </div>
     </div>
-    <div class="thead">
-        <h1 class="div.thead">Usuarios de la aplicación</h1>
-    </div>
+    <!-- <div class="thead"> -->
+        <h1 id="users">Usuarios de la aplicación</h1>
+    <!-- </div> -->
     <div class="tabla_usuarios">
         <?php
             $objeto_controlador = new C_usuarios();
@@ -59,12 +59,23 @@
                         <tr>  
                             <td>'.$dato['first_name'].'</td>
                             <td>'.$dato['last_name'].'</td> 
-                            <td><a href="consulta_usuarios.php?id='.$dato['id'].'&nombreusuario='.$dato['first_name'].'"><img src="../../../diseno/assets/iconos/borrar.png" alt="icono de borrar" class="imgdelete"></a></td> 
-                        </tr>
-                    ';
+                            <td><a href="consulta_usuarios.php?id='.$dato['id'].'&nombreusuario='.$dato['first_name'].'"><img src="../../../diseno/assets/iconos/borrar.png" alt="icono de borrar" class="imgdelete"></a></td>';
+                        
+                        $object_controlador = new C_usuarios();
+                        $admin = $object_controlador->accion_comprobar_admins($dato['id']);
+                        //echo'<td>'.$admin.'</td></tr>';
+                        //var_dump($admin['es_admin']);
+                        if($admin['es_admin'] == 1)
+                        {
+                            echo '<td><input type="checkbox" name="es_admin[]" checked> Admin</td> </tr>';
+                        }
+                        else{
+                            
+                            echo '<td><input type="checkbox" name="es_admin[]"> Admin</td> </tr>';
+                        }   
                 } 
                 
-                echo '</table>';
+                echo '</table>'; 
                 
                 // if(isset($_GET['id']) && isset($_GET['nombreusuario']))
                 // {
@@ -87,12 +98,14 @@
             }
         ?>
     </div><br><br>
-    <form action="" method="POST" enctype="multipart/form-data">
-        <!-- <label>Importar profesor</label><br><br> -->
-        <input type="file" name="archivo_profesor" id=""><br><br>
-        <input type="submit" name="bnn_importar_profesor" id="" value="IMPORTAR">
-    </form>
-
+    <div class="div_excel">
+        <h2>Exportar ausuarios desde archivos excell</h2>
+        <form action="" method="POST" enctype="multipart/form-data">
+            <!-- <label>Importar profesor</label><br><br> -->
+            <input type="file" name="archivo_profesor" id="elegir_archivo"><br><br>
+            <input type="submit" name="bnn_importar_profesor" id="" value="IMPORTAR"> <img src="../../../diseno/assets/iconos/excel.png" class="imgdelete">
+        </form>
+    </div>
     <?php
         if(isset($_POST['bnn_importar_profesor']))
         { 

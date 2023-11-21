@@ -105,8 +105,9 @@
                 $campo6 = $hoja->getCellByColumnAndRow(6,$indiceFila);
                 $campo7 = $hoja->getCellByColumnAndRow(7,$indiceFila);
                 $campo8 = $hoja->getCellByColumnAndRow(8,$indiceFila);
+                $campo9 = $hoja->getCellByColumnAndRow(9,$indiceFila);
 
-                $insertexcel = "INSERT INTO users VALUES (id, '$campo1', '$campo2', '$campo3', '$campo4', '$campo5', '$campo6', '$campo7', '$campo8')";
+                $insertexcel = "INSERT INTO users VALUES (id, '$campo1', '$campo2', '$campo3', '$campo4', '$campo5', '$campo6', '$campo7', '$campo8', '$campo9')";
                 $query3 = $this->conectar->query($insertexcel);
 
             }
@@ -115,6 +116,15 @@
             return 'Añadido con exito';
             
                 
+        }
+
+        public function comprobar_admin($id)
+        {
+            $consulta = "SELECT es_admin FROM users WHERE id = $id";
+            $query4 = $this->conectar->query($consulta);
+
+            $datos = mysqli_fetch_array($query4);
+            return $datos;
         }
     }
 ?>
