@@ -1,3 +1,24 @@
+<?php
+    require_once '../config/config.php';
+    // require_once 'index_def_usuario.php';  
+    // requiere('index_def_usuario.php');  
+?>
+<?php
+    //require_once '../config/config.php';
+
+    session_start(); 
+
+    if(isset($_SESSION['user_token'])) 
+    { 
+        //echo 'hola esoy aqui';  
+        header("Location: index_def_usuario.php");
+             
+    }else{
+        
+        echo '<div id="div_login"><a href="' . $client->createAuthUrl() . '">Iniciar sesión con Google &nbsp; &nbsp;  <img src="../../../diseno/assets/iconos/search.png"></a></div>'; 
+        // echo '<a href="' . $client->createAuthUrl() . '">Iniciar sesión </a>';    
+    }
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -17,15 +38,3 @@
 </body>
 </html>
 
-<?php
-    require_once '../config/config.php';
-
-    if (isset($_SESSION['user_token'])) 
-    { 
-        header("Location: index_def_usuario.php"); 
-
-    }else {
-
-        echo '<div id="div_login"><a href="' . $client->createAuthUrl() . '">Iniciar sesión con Google &nbsp; &nbsp;  <img src="../../../diseno/assets/iconos/search.png"></a></div>';
-    }
-?>

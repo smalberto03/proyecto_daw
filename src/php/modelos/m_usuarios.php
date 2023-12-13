@@ -2,9 +2,9 @@
 
     
     require_once('../config/configdb.php');
-    require('../../../vendor/autoload.php');
+    //require('../../../vendor/autoload.php');
 
-    use PhpOffice\PhpSpreadsheet\IOFactory;
+    //use PhpOffice\PhpSpreadsheet\IOFactory;
     
 
     /**
@@ -75,49 +75,6 @@
             $query2 = $this->conectar->query($delete);
         }
 
-        /**
-         * Metodo que importa que inserta al o a los profesores en la basse de datos 
-         * @param {fyle} $profesor Archivo que se introduce en la vista 
-         */
-        public function importar_profesor($profesor)
-        {
-
-
-            //$archivo = '../../../vendor/Libro3.xlsx';
-            $archivo = $profesor;
-            $documento = IOFactory::load($archivo);
-
-            $hoja = $documento->getSheet(0);
-
-            $numeroFilas = $hoja->getHighestDataRow();
-            $numeroColumnas = $hoja->getHighestColumn();
-
-            
-
-            for($indiceFila = 1; $indiceFila <= $numeroFilas; $indiceFila++)
-            {
-                
-                $campo1 = $hoja->getCellByColumnAndRow(1,$indiceFila);
-                $campo2 = $hoja->getCellByColumnAndRow(2,$indiceFila);
-                $campo3 = $hoja->getCellByColumnAndRow(3,$indiceFila);
-                $campo4 = $hoja->getCellByColumnAndRow(4,$indiceFila);
-                $campo5 = $hoja->getCellByColumnAndRow(5,$indiceFila);
-                $campo6 = $hoja->getCellByColumnAndRow(6,$indiceFila);
-                $campo7 = $hoja->getCellByColumnAndRow(7,$indiceFila);
-                $campo8 = $hoja->getCellByColumnAndRow(8,$indiceFila);
-                $campo9 = $hoja->getCellByColumnAndRow(9,$indiceFila);
-
-                $insertexcel = "INSERT INTO users VALUES (id, '$campo1', '$campo2', '$campo3', '$campo4', '$campo5', '$campo6', '$campo7', '$campo8', '$campo9')";
-                $query3 = $this->conectar->query($insertexcel);
-
-            }
-
-
-            return 'Añadido con exito';
-            
-                
-        }
-
         public function comprobar_admin($id)
         {
             $consulta = "SELECT es_admin FROM users WHERE id = $id";
@@ -125,6 +82,18 @@
 
             $datos = mysqli_fetch_array($query4);
             return $datos;
+        }
+
+        public function anadir_admin($dato)
+        {
+            $update = "UPDATE users SET es_admin = 1";
+            $query5 = $this->conectar->query($update);
+        }
+
+        public function quitar_admin($dato)
+        {
+            $update = "UPDATE users SET es_admin = 0";
+            $query6 = $this->conectar->query($update);
         }
     }
 ?>

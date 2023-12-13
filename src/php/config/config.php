@@ -2,7 +2,7 @@
 
 require_once '../../../vendor/autoload.php';
 
-session_start();
+// session_start();
 
 // init configuration
 $clientID = '853503363773-pgq1ccd922rns5k5igeen5eln9vlsvtr.apps.googleusercontent.com';
@@ -16,7 +16,7 @@ $client->setClientSecret($clientSecret);
 $client->setRedirectUri($redirectUri);
 $client->addScope("email");
 $client->addScope("profile");
-/*
+
 // Connect to database
 $hostname = "localhost";
 $username = "root";
@@ -25,7 +25,6 @@ $database = "proyecto_daw_def";
 
 $conn = mysqli_connect($hostname, $username, $password, $database);
 
-*/
 
 
 
@@ -46,6 +45,7 @@ $conn = mysqli_connect($hostname, $username, $password, $database);
 
 
 
+/*
 
     DEFINE ('SERVIDOR', 'localhost');
     DEFINE ('USUARIO', 'root');

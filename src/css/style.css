@@ -206,8 +206,8 @@ div.liespecial{
 
 /*-------------------ESTILO DEL MAIN ------------*/
 div.anadirusuarios{
-    width: 490px;
-    height: 353px;
+    width: 530px;
+    height: 673px;
     border: 4px solid #408CCE;
     margin: 0 auto;
     padding: 24px;
@@ -255,6 +255,11 @@ input.btncancelar1{
 input.btnaceptar1{
     float: right;
     background-color: #408CCE;
+}
+
+.empty{
+    font-weight: bold;
+    color: red;
 }
 
 

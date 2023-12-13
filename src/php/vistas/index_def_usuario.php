@@ -4,12 +4,19 @@ Uri 'http://localhost/proyecto_daw/src/php/vistas/index_usuario.php'-->
 
 <?php
   require_once '../config/config.php';
-  require_once '../config/configdb.php';
+  //require_once 'index_usuario.php';
+  // require_once '../config/configdb.php';
 
+  // if(!isset($_SESSION['user_token']))
+  // {
+  //   header('Location: index_usuario.php');
+  //   die();
+  // }
+  
   // authenticate code from Google OAuth Flow
   
 
-  if (isset($_GET['code'])) {
+  if(isset($_GET['code'])) {
 
     $token = $client->fetchAccessTokenWithAuthCode($_GET['code']);
     $client->setAccessToken($token['access_token']);
@@ -30,6 +37,8 @@ Uri 'http://localhost/proyecto_daw/src/php/vistas/index_usuario.php'-->
     ];
 
     $dominio = explode("@", $userinfo['email']);
+    echo $dominio[1];
+    //var_dump($dominio[1]);
     //$dominio = explode("@", $userinfo['email']);
 
     // if($dominio[1] != 'gmail.com');
@@ -52,10 +61,10 @@ Uri 'http://localhost/proyecto_daw/src/php/vistas/index_usuario.php'-->
     // checking if user is already exists in database
     $sql = "SELECT * FROM users WHERE email ='{$userinfo['email']}'";
 
-    //$result = mysqli_query($conn, $sql);
-    $conexion = new Conexion();
-    $conectar = $conexion->conectar();
-    $result = $conectar->query($sql);
+    $result = mysqli_query($conn, $sql);
+    // $conexion = new Conexion();
+    // $conectar = $conexion->conectar();
+    // $result = $conectar->query($sql);
 
     if (mysqli_num_rows($result) > 0) 
     {
@@ -63,23 +72,24 @@ Uri 'http://localhost/proyecto_daw/src/php/vistas/index_usuario.php'-->
       $userinfo = mysqli_fetch_assoc($result);
       $token = $userinfo['token'];
 
-    } else {
+    }else{
 
       // user is not exists   
+      
       $sql = "INSERT INTO users (email, first_name, last_name, gender, full_name, picture, verifiedEmail, token, es_admin) VALUES ('{$userinfo['email']}', '{$userinfo['first_name']}', '{$userinfo['last_name']}', '{$userinfo['gender']}', '{$userinfo['full_name']}', '{$userinfo['picture']}', '{$userinfo['verifiedEmail']}', '{$userinfo['token']}', 0)";
-      //$result = mysqli_query($conn, $sql);
-      $conexion2 = new Conexion();
-      $conectar2 = $conexion2->conectar();
-      $result = $conectar2->query($sql);
-      if ($result) {
+      $result = mysqli_query($conn, $sql);
+      // $conexion2 = new Conexion();
+      // $conectar2 = $conexion2->conectar();
+      // $result = $conectar2->query($sql);
+      if($result){
 
         $token = $userinfo['token'];
 
-      } else {
+      }else{
 
         echo "User is not created";
 
-        die();
+        //die();
       }
     }
 
@@ -87,21 +97,27 @@ Uri 'http://localhost/proyecto_daw/src/php/vistas/index_usuario.php'-->
     $_SESSION['user_token'] = $token;
     
 
-  }else {
+  }else{
 
-    if (!isset($_SESSION['user_token'])) 
+    if(!isset($_SESSION['user_token']))
     {
-      header("Location: index_usuario.php");
+      header('Location: index_usuario.php');
       die();
     }
+
+    // if (!isset($_SESSION['user_token'])) 
+    // {
+    //   header("Location: index_usuario.php");
+    //   die();
+    // }
 
     // checking if user is already exists in database
     $sql = "SELECT * FROM users WHERE token ='{$_SESSION['user_token']}'";
 
-    $conexion3 = new Conexion();
-    $conectar3 = $conexion3->conectar();
-    $result = $conectar3->query($sql);
-    //$result = mysqli_query($conn, $sql);
+    // $conexion3 = new Conexion();
+    // $conectar3 = $conexion3->conectar();
+    // $result = $conectar3->query($sql);
+    $result = mysqli_query($conn, $sql);
 
     if (mysqli_num_rows($result) > 0) 
     {
@@ -130,6 +146,20 @@ Uri 'http://localhost/proyecto_daw/src/php/vistas/index_usuario.php'-->
       </div>
       <div class="titulo">ESCUELA VIRGEN DE GUADALUPE</div>
       <div><img src="<?= $userinfo['picture'] ?>" alt="" width="55px" height="55px" class="user_image"></div>
+    </div>
+    <div class="nav2">
+        <div>
+            Gestionar usuarios 
+        </div>
+        <div>
+            Profesores
+        </div>
+        <div>
+            Gestión horario 
+        </div>
+        <div>
+            Horas especiales
+        </div>
     </div>
     <!--<div>    
        // echo '<img src="'.$_SESSION["user_image"].'" class="img-responsive img-circle img-thumbnail" />'; -->

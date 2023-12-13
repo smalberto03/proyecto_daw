@@ -59,16 +59,6 @@
             
         }
 
-        public function accion_al_importar_profesor($profesor)
-        {
-            
-            $objeto_modelo = new M_usuarios();
-            $importacion = $objeto_modelo->importar_profesor($profesor);
-
-            header('Location: ../vistas/consulta_usuarios.php');
-
-            echo $importacion;             
-        }
 
         public function accion_comprobar_admins($id)
         {
@@ -76,6 +66,19 @@
             $respuesta = $object_model->comprobar_admin($id);
 
             return $respuesta;
+        }
+
+        public function modificar_check($check, $dato)
+        {
+            if($check == 1)
+            {
+                $objeto_modelo = new M_usuarios();
+                $objeto_modelo->anadir_admin($dato);
+            }
+            else{
+                $objeto_modelo = new M_usuarios();
+                $objeto_modelo->quitar_admin($dato);
+            }
         }
     }
 ?>

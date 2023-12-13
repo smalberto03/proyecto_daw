@@ -50,6 +50,7 @@
                     <a href="consulta_usuarios.php?id1='.$_GET['id'].'"><img src="../../../diseno/assets/iconos/check-mark.png" class="imgdelete"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                     <a href="consulta_usuarios.php"><img src="../../../diseno/assets/iconos/x.png" class="imgdelete"></a>';
                 } 
+                  
                 
                 echo '<table class="tabla_usuarios">';
 
@@ -67,15 +68,20 @@
                         //var_dump($admin['es_admin']);
                         if($admin['es_admin'] == 1)
                         {
-                            echo '<td><input type="checkbox" name="es_admin[]" checked> Admin</td> </tr>';
+                            echo '<td><form  method="POST"><input type="checkbox" name="es_admin" checked> Admin</form></td> </tr>'; 
+                            //echo '<td>'.$dato['es_admin'].'</td>';
+                            //var_dump($admin['es_admin']); 
                         }
-                        else{
-                            
-                            echo '<td><input type="checkbox" name="es_admin[]"> Admin</td> </tr>';
-                        }   
-                } 
-                
-                echo '</table>'; 
+                        else{ 
+                            echo '<td><form  method="POST"><input type="checkbox" name="es_admin"> Admin</form></td> </tr>'; 
+                            //echo '<td>'.$dato['es_admin'].'</td>';
+                            //var_dump($admin['es_admin']);                         
+                        }    
+                        
+                        $objeto_del_controlador = new C_usuarios();
+                        $objeto_del_controlador->modificar_check($admin['es_admin'], $dato['es_admin']); 
+                }
+                echo '</table>';    
                 
                 // if(isset($_GET['id']) && isset($_GET['nombreusuario']))
                 // {
@@ -96,23 +102,44 @@
                     $id = $objeto_controlador1->accion_al_borrar_usuario($_GET['id1']);
                 }
             }
+
+            //if(isset($_POST['es_admin']))
+            //{
+                
+            //}
         ?>
     </div><br><br>
-    <div class="div_excel">
+
+
+
+
+
+
+
+
+
+    <!--<div class="div_excel">
         <h2>Exportar ausuarios desde archivos excell</h2>
         <form action="" method="POST" enctype="multipart/form-data">
-            <!-- <label>Importar profesor</label><br><br> -->
+            <label>Importar profesor</label><br><br> 
             <input type="file" name="archivo_profesor" id="elegir_archivo"><br><br>
             <input type="submit" name="bnn_importar_profesor" id="" value="IMPORTAR"> <img src="../../../diseno/assets/iconos/excel.png" class="imgdelete">
         </form>
-    </div>
+    </div>-->
     <?php
-        if(isset($_POST['bnn_importar_profesor']))
-        { 
-            $objeto_controlador3 = new C_usuarios();
-            $importar = $objeto_controlador3->accion_al_importar_profesor($_FILES['archivo_profesor']['tmp_name']);
-        }
+        // if(isset($_POST['bnn_importar_profesor']))
+        // { 
+        //     $objeto_controlador3 = new C_usuarios();
+        //     $importar = $objeto_controlador3->accion_al_importar_profesor($_FILES['archivo_profesor']['tmp_name']);
+        // }
     ?>
+
+
+
+
+
+
+
 
     <!-- <table class="tabla_usuarios">
         <tr>
