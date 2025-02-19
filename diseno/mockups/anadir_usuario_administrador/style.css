@@ -1,0 +1,106 @@
+/*LE PONEOS FUENTE A LAS VISTAS*/
+*{
+    font-family: 'Open Sans';
+}
+
+/*-------------------ESTILO DEL NAV (SERÁ PARECIDO AL RESTO DE VISTAS)------------*/
+div.nav{
+    background-color: #1274CA;
+    height: 115px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    padding: 25px;
+}
+
+img#logo{
+    width: 255px;
+    height: 123px;
+}
+
+div.titulo{
+    margin-left: 250px; 
+    margin-top: 25px;
+    /* text-align: center; */
+    font-weight: bold;
+    font-size: 42px;
+    color: white;
+}
+
+/*-------------------ESTILO DEL NAV SECUNDATRIO (SERÁ PARECIDO AL RESTO DE VISTAS)------------*/
+div.nav2{
+    background-color: #408CCE; 
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    color: white;
+    height: 85px;
+    margin-top: 7px;
+}
+
+div.nav2 div{
+    margin: 10px;
+    text-align: center;
+    line-height: 60px;
+    font-size: 30px;
+}
+
+div.liespecial{
+    font-weight: bold;
+    color: #014179;
+    text-decoration: underline; 
+}
+
+
+/*-------------------ESTILO DEL MAIN ------------*/
+div.anadirusuarios{
+    width: 490px;
+    height: 353px;
+    border: 4px solid #408CCE;
+    margin: 0 auto;
+    padding: 24px;
+    margin-top: 16px;
+}
+
+h1#tituloform{
+    color: #DD890D;
+    margin: 0 auto; 
+    margin-bottom: 71px;
+    text-align: center;
+}
+
+label.label_anadirusuarios{
+    font-weight: bold;
+    color: #014179;
+    font-size: x-large;
+    margin-top: 27px;
+}
+
+input.input_anadirusuarios{
+    border: 0px;
+    border-bottom: 2px solid #DD890D; 
+    width: 220px;
+    margin-left: 10px;
+    font-size: large;
+}
+
+input.btncancelar1, input.btnaceptar1{
+    margin-top: 30px;
+    width: 91px;
+    height: 50px;
+    font-weight: bold;
+    border-radius: 4px;
+    border: 2px solid;
+    color: white;
+    cursor: pointer;
+}
+
+input.btncancelar1{
+    float: left;
+    background-color: #014179;
+}
+
+input.btnaceptar1{
+    float: right;
+    background-color: #408CCE;
+}

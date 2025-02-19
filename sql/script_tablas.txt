@@ -1,0 +1,30 @@
+CREATE TABLE asignaturas(
+        idAsignatura tinyint NOT NULL,
+        codigo_asignatura char(4) NOT NULL,
+        nombreAsignatura varchar(16) NOT NULL,
+        tipo char(1) NOT NULL CHECK(tipo IN('e','l')),
+	CONTRAINT pk PRIMARY KEY (idAsignatura)
+  );
+
+
+CREATE TABLE cursos(
+    idCurso tinyint NOT NULL,
+    codigo_curso char(3) NOT NULL,
+    nombreCurso char(5) NOT NULL,
+CONTRAINT pk PRIMARY KEY (idCurso)
+   );
+
+
+CREATE TABLE horarios(
+   idHorario tinyint NOT NULL AUTO_INCREMENT,
+   diaSemana char(1) NOT NULL CHECK (diaSemana BETWEEN 1 and 5),
+ hora char(1) NOT NULL CHECK(hora BETWEEN 1 AND 7),
+    idAsignatura tinyint NOT NULL,
+    idProfesor tinyint NOT NULL,
+    idCurso tinyint NOT NULL,
+    CONSTRAINT pk_horarios PRIMARY KEY (idHorario),
+    CONSTRAINT fk_asignaturas FOREIGN KEY (idAsignatura) REFERENCES asignaturas(idAsignatura),
+    CONSTRAINT fk_profesores FOREIGN KEY (idProfesor) REFERENCES profesores(idProfesor),
+    CONSTRAINT fk_cursos FOREIGN KEY (idCurso) REFERENCES cursos(idCurso),
+    CONSTRAINT csu_horarios UNIQUE (diaSemana, hora, idProfesor)
+    );

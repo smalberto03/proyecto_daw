@@ -1,0 +1,56 @@
+/*LE PONEOS FUENTE A LAS VISTAS*/
+*{
+    font-family: 'Open Sans';
+}
+
+/*-------------------ESTILO DEL NAV (SERÁ PARECIDO AL RESTO DE VISTAS)------------*/
+div.nav{
+    background-color: #1274CA;
+    height: 115px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    padding: 25px;
+}
+
+img#logo{
+    width: 255px;
+    height: 123px;
+}
+
+div.titulo{
+    margin-left: 250px; 
+    margin-top: 25px;
+    /* text-align: center; */
+    font-weight: bold;
+    font-size: 42px;
+    color: white;
+}
+
+
+/*-------------------ESTILO DEL NAV SECUNDATRIO (SERÁ PARECIDO AL RESTO DE VISTAS)------------*/
+div.nav2{
+    background-color: #408CCE; 
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    color: white;
+    height: 85px;
+    margin-top: 7px;
+}
+
+div.nav2 div{
+    margin: 10px;
+    text-align: center;
+    line-height: 75px;
+    font-size: 30px;
+}
+
+
+/*-------------------ESTILO DEL MAIN ------------*/
+
+div.horario{
+    margin-top: 20px;
+    border: 2px solid #DD890D;
+    height: 400px;  
+}
