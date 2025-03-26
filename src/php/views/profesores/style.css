@@ -1,0 +1,50 @@
+.nav, .nav2 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #343a40;
+    color: white;
+}
+.nav img {
+    height: 40px;
+}
+.titulo {
+    font-size: 1.5rem;
+}
+#titulo_profesores {
+    text-align: center;
+    margin-top: 20px;
+}
+table {
+    width: 80%;
+    margin: 20px auto;
+    border-collapse: collapse;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+th, td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+th {
+    background-color: #007bff;
+    color: white;
+}
+tr:hover {
+    background-color: #f1f1f1;
+}
+img {
+    border-radius: 50%;
+}
+input[type="checkbox"] {
+    transform: scale(1.2);
+}
+.div_excel {
+    margin-top: 20px;
+    text-align: center;
+}
+.imgbtn, .imgdelete {
+    width: 24px;
+    height: 24px;
+}
