@@ -17,12 +17,10 @@ class SeccionController {
     public function mostrarFormularioModificar($id) {
         $seccion = $this->model->getSeccionById($id);
         return $seccion;
-        //require_once '../views/secciones/modificar_secciones.php';
     }
 
     public function procesarModificacionSeccion($id, $codigo_seccion, $nombreSeccion) {
-        $this->model->updateSeccion($id, $codigo_seccion, $nombreSeccion);
-        header("Location: consulta_secciones.php");
+        return $this->model->updateSeccion($id, $codigo_seccion, $nombreSeccion);
     }
 
     public function borrarSeccion($id) {

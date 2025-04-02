@@ -29,9 +29,17 @@ class CursoModelo {
         return $stmt->fetch(PDO::FETCH_ASSOC);
     }
 
-    public function updateCurso($idCurso, $descripcion) {
-        $stmt = $this->pdo->prepare("UPDATE Cursos SET descripcion = ? WHERE idCurso = ?");
-        return $stmt->execute([$descripcion, $idCurso]);
+    public function updateCurso($id, $fechaInicio, $fechaFin, $descripcion) {
+        // Asegúrate de que la consulta SQL tenga el número correcto de marcadores de posición
+        $stmt = $this->pdo->prepare("UPDATE Cursos SET fechaInicio = :fechaInicio, fechaFin = :fechaFin, descripcion = :descripcion WHERE idCurso = :id");
+    
+        // Pasa los parámetros como un array asociativo
+        return $stmt->execute([
+            ':fechaInicio' => $fechaInicio,
+            ':fechaFin' => $fechaFin,
+            ':descripcion' => $descripcion,
+            ':id' => $id
+        ]);
     }
 }
 ?>

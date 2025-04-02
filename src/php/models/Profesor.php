@@ -36,11 +36,9 @@ class Profesor {
         return $datos;
     }
 
-    public function updateProfesor($id, $cod_profesor, $nombre, $apellidos, $nombreusuario, $pass, $tipo, $imagen, $idProfesorSustituto=null) {
-        $query = "UPDATE Profesores SET cod_profesor = ?, nombre = ?, apellidos = ?, email = ?, pass = ?, tipo = ?, imagen = ?, idProfesorSustituto = ? WHERE idProfesor = ?";
-        $stmt = $this->db->prepare($query);
-        $stmt->bind_param("sssssisi", $cod_profesor, $nombre, $apellidos, $nombreusuario, $pass, $tipo, $imagen, $idProfesorSustituto, $id);
-        return $stmt->execute();
+    public function updateProfesor($id, $nombre, $apellidos, $nombreusuario, $pass, $imagen, $tipo, $idProfesorSustituto) {
+        $stmt = $this->pdo->prepare("UPDATE Profesores SET nombre = ?, apellidos = ?, nombreusuario = ?, pass = ?, imagen = ?, tipo = ?, idProfesorSustituto = ? WHERE idProfesor = ?");
+        return $stmt->execute([$nombre, $apellidos, $nombreusuario, $pass, $imagen, $tipo, $idProfesorSustituto, $id]);
     }
 
     public function deleteProfesor($id) {

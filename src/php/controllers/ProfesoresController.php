@@ -53,8 +53,8 @@ class ProfesoresController {
         //var_dump($profesor);
     }
 
-    public function guardarModificaciones($id, $cod_profesor, $nombre, $apellidos, $nombreusuario, $pass, $tipo, $imagen, $idProfesorSustituto) {
-        $this->model->updateProfesor($id, $cod_profesor, $nombre, $apellidos, $nombreusuario, $pass, $tipo, $imagen, $idProfesorSustituto);
+    public function procesarModificacionProfesor($id, $nombre, $apellidos, $nombreusuario, $pass, $imagen, $tipo, $idProfesorSustituto) {
+        return $this->model->updateProfesor($id, $nombre, $apellidos, $nombreusuario, $pass, $imagen, $tipo, $idProfesorSustituto);
     }
 
     public function borrarProfesor($id) {

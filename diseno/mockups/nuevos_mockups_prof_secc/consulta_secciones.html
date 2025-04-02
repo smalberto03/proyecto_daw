@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Consulta de Secciones</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header class="header">
+        <div class="logo">
+            <img src="logo.png" alt="Logo Escuela Virgen de Guadalupe">
+        </div>
+        <h1>Escuela Virgen de Guadalupe</h1>
+    </header>
+    <nav class="navbar">
+        <a href="#" class="nav-item">Gestionar usuarios</a>
+        <a href="#" class="nav-item active">Secciones</a>
+        <a href="#" class="nav-item">Gestión horario</a>
+        <a href="#" class="nav-item">Horas especiales</a>
+    </nav>
+    <main class="main-content">
+        <div class="card">
+            <h2>Lista de Secciones</h2>
+            <a href="alta_seccion.php" class="btn add-btn">Añadir Sección</a>
+            <table class="data-table">
+                <tr>
+                    <th>Código</th>
+                    <th>Nombre</th>
+                    <th>Acciones</th>
+                </tr>
+                <!-- Aquí irían los datos de las secciones -->
+                <tr>
+                    <td>SEC001</td>
+                    <td>1º A</td>
+                    <td>
+                        <a href="modificar_seccion.php?id=1" class="btn edit-btn">Modificar</a>
+                        <button class="btn delete-btn" onclick="confirmarBorrado(1)">Borrar</button>
+                    </td>
+                </tr>
+            </table>
+            <h3>Importar Secciones desde CSV</h3>
+            <form action="importar_secciones.php" method="post" enctype="multipart/form-data">
+                <input type="file" name="archivo_secciones" accept=".csv" required>
+                <input type="submit" value="Importar" class="btn add-btn">
+            </form>
+        </div>
+    </main>
+    <script>
+        function confirmarBorrado(id) {
+            if (confirm("¿Estás seguro de que deseas eliminar esta sección?")) {
+                window.location.href = 'borrar_seccion.php?id=' + id;
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Asignaturas</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Escuela Virgen de Guadalupe</h1>
+    </header>
+    <nav>
+        <a href="#">Gestionar usuarios</a>
+        <a href="#" style="background-color: #005f99;">Profesores</a>
+        <a href="#">Gestión horario</a>
+        <a href="#">Horas especiales</a>
+    </nav>
+    <div class="container">
+        <h1>Asignaturas</h1>
+        <a href="agregarAsignatura.html" class="btn">Añadir Asignatura</a>
+        <table>
+            <tr>
+                <th>Nombre</th>
+                <th>Tipo</th>
+                <th>Acciones</th>
+            </tr>
+            <tr>
+                <td>Matemáticas</td>
+                <td>Lectiva</td>
+                <td>
+                    <a href="editarAsignatura.html?id=1" class="btn btn-edit">Editar</a>
+                </td>
+            </tr>
+            <tr>
+                <td>Educación Física</td>
+                <td>Especial ✔</td>
+                <td>
+                    <a href="editarAsignatura.html?id=2" class="btn btn-edit">Editar</a>
+                    <button class="btn btn-delete" onclick="confirmarEliminar(2)">Eliminar</button>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <script>
+        function confirmarEliminar(id) {
+            if (confirm("¿Estás seguro de que deseas eliminar esta asignatura?")) {
+                // Aquí puedes agregar la lógica para eliminar la asignatura
+                alert('Asignatura eliminada con ID: ' + id);
+            }
+        }
+    </script>
+</body>
+</html>

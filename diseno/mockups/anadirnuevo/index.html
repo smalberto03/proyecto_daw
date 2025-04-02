@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Escuela Virgen de Guadalupe</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="header">
+        <div class="logo">
+            <img src="logo.png" alt="Logo Escuela Virgen de Guadalupe">
+        </div>
+        <h1>Escuela Virgen de Guadalupe</h1>
+    </header>
+    <nav class="navbar">
+        <a href="#" class="nav-item">Gestionar usuarios</a>
+        <a href="#" class="nav-item active">Profesores</a>
+        <a href="#" class="nav-item">Gestión horario</a>
+        <a href="#" class="nav-item">Horas especiales</a>
+    </nav>
+    <main class="main-content">
+        <div class="card">
+            <h2>Añadir Nuevo Profesor</h2>
+            <form class="professor-form">
+                <label for="nombre">Nombre</label>
+                <input type="text" id="nombre" name="nombre" required>
+
+                <label for="correo">Correo</label>
+                <input type="email" id="correo" name="correo" required>
+
+                <label for="sustituto">¿Es profesor sustituto?</label>
+                <input type="checkbox" id="sustituto" name="sustituto">
+
+                <div class="button-group">
+                    <button type="button" class="btn cancel-btn">Cancelar</button>
+                    <button type="submit" class="btn add-btn">Añadir</button>
+                </div>
+            </form>
+        </div>
+    </main>
+</body>
+</html>

@@ -1,5 +1,5 @@
 <?php
-require_once 'controller/SeccionController.php';
+require_once '../../controllers/SeccionController.php';
 
 $controller = new SeccionController();
 
@@ -9,5 +9,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $nombreSeccion = $_POST['nombreSeccion'];
 
     $controller->procesarModificacionSeccion($id, $codigo_seccion, $nombreSeccion);
+    header("Location: consulta_secciones.php");
 }
 ?>

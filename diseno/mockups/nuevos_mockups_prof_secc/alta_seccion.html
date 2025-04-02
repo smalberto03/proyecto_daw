@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alta de Sección</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header class="header">
+        <div class="logo">
+            <img src="logo.png" alt="Logo Escuela Virgen de Guadalupe">
+        </div>
+        <h1>Escuela Virgen de Guadalupe</h1>
+    </header>
+    <nav class="navbar">
+        <a href="#" class="nav-item">Gestionar usuarios</a>
+        <a href="#" class="nav-item">Secciones</a>
+        <a href="#" class="nav-item">Gestión horario</a>
+        <a href="#" class="nav-item">Horas especiales</a>
+    </nav>
+    <main class="main-content">
+        <div class="card">
+            <h2>Alta de Sección</h2>
+            <form action="procesar_alta_seccion.php" method="post" class="professor-form">
+                <label for="codigo_seccion">Código:</label>
+                <input type="text" id="codigo_seccion" name="codigo_seccion" required>
+
+                <label for="nombreSeccion">Nombre:</label>
+                <input type="text" id="nombreSeccion" name="nombreSeccion" required>
+
+                <div class="button-group">
+                    <button type="button" class="btn cancel-btn">Cancelar</button>
+                    <button type="submit" class="btn add-btn">Agregar Sección</button>
+                </div>
+            </form>
+        </div>
+    </main>
+</body>
+</html>
