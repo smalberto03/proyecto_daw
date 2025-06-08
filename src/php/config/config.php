@@ -57,7 +57,7 @@ $database = "proyecto_daw_def";*/
     DEFINE ('SERVIDOR', 'localhost');
     DEFINE ('USUARIO', 'root');
     DEFINE ('PASSWORD', '');
-    DEFINE ('BBDD', 'proyecto_daw_def');
+    DEFINE ('BBDD', 'proyecto_daw_def_2425_def');
 
     // DEFINE ('SERVIDOR', '23.2daw.esvirgua.com');
     // DEFINE ('USUARIO', 'user2daw_23');
