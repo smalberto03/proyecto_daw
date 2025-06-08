@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Añadir Asignatura</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Escuela Virgen de Guadalupe</h1>
+    </header>
+    <div class="container">
+        <h1>Añadir Asignatura</h1>
+        <form action="agregarAsignatura.html" method="post">
+            <label for="codigo">Código:</label>
+            <input type="text" name="codigo" required>
+
+            <label for="nombre">Nombre:</label>
+            <input type="text" name="nombre" required>
+
+            <label for="tipo">Tipo:</label>
+            <select name="tipo" required>
+                <option value="l">Lectiva</option>
+                <option value="e">Especial</option>
+            </select>
+
+            <button type="submit" class="btn">Aceptar</button>
+            <a href="listaAsignaturas.html" class="btn" style="background-color: #555;">Cancelar</a>
+        </form>
+    </div>
+</body>
+</html>
