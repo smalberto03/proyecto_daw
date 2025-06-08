@@ -1,0 +1,15 @@
+{
+    "name": "smalb/proyecto_daw_2425_def",
+    "autoload": {
+        "psr-4": {
+            "Smalb\\ProyectoDaw2425Def\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Alberto",
+            "email": "albertosalazarmunoz.guadalupe@alumnado.fundacionloyola.net"
+        }
+    ],
+    "require": {}
+}
